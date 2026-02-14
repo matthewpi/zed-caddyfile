@@ -1,11 +1,11 @@
 schema_version = 1
 id = "caddyfile"
 name = "Caddyfile"
-description = "Caddyfile language support for Zed"
 version = "0.1.0"
+description = "Caddyfile language support for Zed"
 authors = ["Matthew Penner <me@matthewp.io>"]
-repository = "https://github.com/matthewpi/zed-caddyfile"
+repository = "https://github.com/caddyserver/zed-caddyfile"
 
 [grammars.caddyfile]
-repository = "https://github.com/matthewpi/tree-sitter-caddyfile"
-commit = "7374a9d1080e4c5685397edcda7bf20b873d6e69"
+repository = "https://github.com/caddyserver/tree-sitter-caddyfile"
+rev = "8951716aa2855e02dada302c540a90f277546095"

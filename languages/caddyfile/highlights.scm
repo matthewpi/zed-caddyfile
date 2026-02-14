@@ -1,39 +1,50 @@
+(comment) @comment
 [
-	(url)
-	(unix_socket)
-	(network_address)
-] @type
-(placeholder) @constant
+  (environment_variable)
+  (placeholder)
+] @constant
 
-(site_address) @keyword
-(snippet_name) @property
+[
+  (network_address)
+  (ip_address_or_cidr)
+  (path)
+] @type
+
+[
+  (snippet_name)
+  (named_route_identifier)
+  (site_address)
+] @keyword
 
 (directive (directive_name) @property)
 
-(named_matcher (matcher_name) @function.method)
+; declaration of a named matcher
+(named_matcher (matcher_identifier (matcher_name)) @function.macro)
 
-(matcher) @function.call
+; reference to a named matcher
+(matcher (matcher_identifier (matcher_name)) @function.macro)
+
+; directive within a named matcher declaration
+(matcher_directive (matcher_directive_name) @function.method)
+
+; any other matcher (wildcard and path)
+(matcher) @function.macro
 
 [
-	(interpreted_string_literal)
-	(raw_string_literal)
+  (interpreted_string_literal)
+  (raw_string_literal)
+  (heredoc)
+  (cel_expression)
 ] @string
-
 (escape_sequence) @escape
 
-(int_literal) @number
+[
+  (duration_literal)
+  (int_literal)
+  (status_code_fallback)
+] @number
 
-(comment) @comment
-
-;[
-;	"on"
-;	"off"
-;	"first"
-;	"last"
-;	"before"
-;	"after"
-;	"internal"
-;	"strip_prefix"
-;	"strip_suffix"
-;	"replace"
-;] @constant
+[
+  "{"
+  "}"
+] @punctuation.bracket

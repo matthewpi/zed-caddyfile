@@ -1,8 +1,7 @@
-[ "{" ] @indent.end
-
-[ "{" "}" ] @indent.branch
-
 [
-	(ERROR)
-	(comment)
-] @indent.auto
+  (global_options)
+  (block)
+  (matcher_block)
+] @indent
+
+(_ "{" "}" @end) @indent
